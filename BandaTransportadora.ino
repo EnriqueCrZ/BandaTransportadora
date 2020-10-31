@@ -16,9 +16,9 @@ void setup() {
   lcd.init();
   lcd.backlight();
   lcd.clear();
- /* pinMode(Trigger, OUTPUT);
+  pinMode(Trigger, OUTPUT);
   pinMode(Echo, INPUT);
-  digitalWrite(Trigger, LOW);*/
+  digitalWrite(Trigger, LOW);
   pinMode(relepin, OUTPUT);
 }
 void color (int rojo, int verde, int azul) {
@@ -32,14 +32,13 @@ void loop() {
   delay(pausa);       // delay por pausa
   long t; //timepo que demora en llegar el eco
   long d; //distancia en centimetros
- /* digitalWrite(Trigger, HIGH);
+  digitalWrite(Trigger, HIGH);
   delayMicroseconds(10);
   digitalWrite(Trigger, LOW);
 
   t = pulseIn(Echo, HIGH);*/
 
-  //d = t/59;             //escalamos el tiempo a una distancia en cm
-  d= 5;
+  d = t/59;             //escalamos el tiempo a una distancia en cm
   
   if(d<=5){
  color(0, 255, 0);   // rojo
@@ -53,7 +52,7 @@ void loop() {
     lcd.print("Tempuratura: ");
     lcd.setCursor (0,1);
     lcd.print(temp);
-    /*digitalWrite(relepin, LOW);
+    digitalWrite(relepin, LOW);
     delay(100);
     if(temp >=25)
      digitalWrite(relepin, LOW);
@@ -61,7 +60,7 @@ void loop() {
     }
     else {
       color(255, 0, 0);
-      digitalWrite(relepin, HIGH);*/
+      digitalWrite(relepin, HIGH);
     }
   
 }
