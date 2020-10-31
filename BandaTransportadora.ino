@@ -36,7 +36,7 @@ void loop() {
   delayMicroseconds(10);
   digitalWrite(Trigger, LOW);
 
-  t = pulseIn(Echo, HIGH);*/
+  t = pulseIn(Echo, HIGH);
 
   d = t/59;             //escalamos el tiempo a una distancia en cm
   
